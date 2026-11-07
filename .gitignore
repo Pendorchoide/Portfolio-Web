@@ -1,0 +1,12 @@
+# Entornos virtuales
+.venv/
+venv/
+
+# Dependencias y archivos generados
+node_modules/
+dist/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini
