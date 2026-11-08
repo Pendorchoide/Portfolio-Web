@@ -8,11 +8,12 @@
       content="Portfolio de Valentín Dutruel, desarrollador y diseñador. Proyectos, habilidades y formación."
     >
     <title>Valentín Dutruel — Desarrollador y Diseñador</title>
+    <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
-    <header id="header">
-      <a href="#hero">VD — Valentín Dutruel</a>
-      <nav aria-label="Navegación principal">
+    <header class="site-header" id="header">
+      <a class="brand" href="#hero"><span class="brand-mark" aria-hidden="true">VD</span> Valentín Dutruel</a>
+      <nav class="site-nav" aria-label="Navegación principal">
         <a href="#about">Sobre mí</a>
         <a href="#skills">Habilidades</a>
         <a href="#projects">Proyectos</a>
@@ -20,132 +21,147 @@
         <a href="#experience">Formación</a>
         <a href="#contact">Contacto</a>
       </nav>
-      <nav aria-label="Redes sociales">
-        <a href="https://www.linkedin.com/in/valentin-dutruel-581369336/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://github.com/Pendorchoide" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <details class="mobile-menu">
+        <summary><span aria-hidden="true">☰</span><span class="visually-hidden">Menú de navegación</span></summary>
+        <nav class="mobile-menu-nav" aria-label="Navegación móvil">
+          <a href="#about">Sobre mí</a>
+          <a href="#skills">Habilidades</a>
+          <a href="#projects">Proyectos</a>
+          <a href="#metrics">Métricas</a>
+          <a href="#experience">Formación</a>
+          <a href="#contact">Contacto</a>
+        </nav>
+      </details>
+      <nav class="header-socials" aria-label="Redes sociales">
+        <a href="https://www.linkedin.com/in/valentin-dutruel-581369336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+        <a href="https://github.com/Pendorchoide" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
       </nav>
     </header>
 
     <main>
-      <section id="hero" aria-labelledby="hero-title">
-        <h1 id="hero-title">Diseños con Creatividad</h1>
-        <p>
-          Soy Valentín Dutruel, desarrollador y diseñador. Mi trabajo se centra en la creación de
-          software con calidad, enfocado al usuario y su comodidad.
-        </p>
-        <p>
-          <a href="#projects">Ver proyectos</a>
-          <a href="#contact">Contactame</a>
-        </p>
-        <p>Abierto para trabajar · Colón, Entre Ríos, Argentina</p>
+      <section class="hero section-shell" id="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <h1 id="hero-title">Diseños con <span>Creatividad</span></h1>
+          <p class="hero-description">
+            Soy Valentín Dutruel, desarrollador y diseñador. Mi trabajo se centra en la creación de
+            software con calidad, enfocado al usuario y su comodidad.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-accent" href="#projects">Ver proyectos</a>
+            <a class="button button-light" href="#contact">Contactame</a>
+          </div>
+          <p class="availability">Abierto para trabajar <span>·</span> Colón, Entre Ríos, Argentina</p>
+        </div>
       </section>
 
-      <section id="about" aria-labelledby="about-title">
-        <h2 id="about-title">Un poco sobre mí</h2>
-        <p>
-          Soy Valentín Dutruel, desarrollador y diseñador. Actualmente me encuentro estudiando la
-          carrera Licenciatura en Sistemas de Información.
-        </p>
-        <p>
-          Mi interés se centra en la creación de software a medida, resuelto con soluciones
-          creativas y fuera de la caja.
-        </p>
-        <p>
-          Mi mejor atributo es la curiosidad, siempre pendiente de aprender cosas nuevas para poder
-          implementar en mi trabajo.
-        </p>
-        <figure>
-          <figcaption>Valentín Dutruel — Desarrollador · Diseñador</figcaption>
+      <section class="about section-shell" id="about" aria-labelledby="about-title">
+        <figure class="profile-card">
+          <div class="profile-placeholder" aria-hidden="true">VD</div>
+          <figcaption>
+            <strong>Valentín Dutruel</strong>
+            <span>Desarrollador · Diseñador</span>
+          </figcaption>
         </figure>
-        <ul aria-label="Principios de trabajo">
-          <li>Esfuerzo</li>
-          <li>Responsabilidad</li>
-          <li>Creatividad</li>
-        </ul>
+        <div class="about-content">
+          <h2 id="about-title">Un poco sobre mí</h2>
+          <p>
+            Soy Valentín Dutruel, desarrollador y diseñador. Actualmente me encuentro estudiando la
+            carrera Licenciatura en Sistemas de Información.
+          </p>
+          <p>
+            Mi interés se centra en la creación de software a medida, resuelto con soluciones
+            creativas y fuera de la caja.
+          </p>
+          <p>
+            Mi mejor atributo es la curiosidad, siempre pendiente de aprender cosas nuevas para poder
+            implementar en mi trabajo.
+          </p>
+          <ul class="values-list" aria-label="Principios de trabajo">
+            <li>Esfuerzo</li>
+            <li>Responsabilidad</li>
+            <li>Creatividad</li>
+          </ul>
+        </div>
       </section>
 
-      <section id="skills" aria-labelledby="skills-title">
+      <section class="skills section-shell" id="skills" aria-labelledby="skills-title">
         <h2 id="skills-title">Mis habilidades</h2>
-        <article>
-          <h3>Diseño</h3>
-          <p>
-            ¿Necesitas crear tu identidad de marca, promocionar tus productos, o simplemente un poco
-            de arte? Mi experiencia abarca desde ilustraciones 2D, hasta la creación de modelos 3D.
-          </p>
-          <ul aria-label="Herramientas de diseño">
-            <li>Illustrator</li>
-            <li>Photoshop</li>
-            <li>Blender</li>
-            <li>SolidWorks</li>
-            <li>Animate</li>
-            <li>Figma</li>
-            <li>Aseprite</li>
-            <li>Clip Studio Paint</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Desarrollo</h3>
-          <p>
-            ¿Buscas software que solucione tus problemas? Desde desarrollo web hasta aplicaciones de
-            escritorio, puedo aportar las herramientas que hacen tu trabajo más sencillo.
-          </p>
-          <ul aria-label="Herramientas de desarrollo">
-            <li>C++</li>
-            <li>Premake</li>
-            <li>C#</li>
-            <li>Git</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>Java</li>
-            <li>Pygame</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Complementos</h3>
-          <p>
-            ¿Necesitas algo más? Ningún proyecto es igual a otro, por eso es importante incorporar
-            personalidad a través de otros medios de creación.
-          </p>
-          <ul aria-label="Herramientas complementarias">
-            <li>Audacity</li>
-            <li>FL Studio</li>
-            <li>Premiere</li>
-            <li>Godot</li>
-            <li>Unity</li>
-          </ul>
-        </article>
+        <div class="skills-grid">
+          <article class="skill-card">
+            <h3>Diseño</h3>
+            <p>
+              ¿Necesitas crear tu identidad de marca, promocionar tus productos, o simplemente un
+              poco de arte? Mi experiencia abarca desde ilustraciones 2D, hasta la creación de
+              modelos 3D.
+            </p>
+            <ul class="tag-list" aria-label="Herramientas de diseño">
+              <li>Illustrator</li><li>Photoshop</li><li>Blender</li><li>SolidWorks</li>
+              <li>Animate</li><li>Figma</li><li>Aseprite</li><li>Clip Studio Paint</li>
+            </ul>
+          </article>
+          <article class="skill-card">
+            <h3>Desarrollo</h3>
+            <p>
+              ¿Buscas software que solucione tus problemas? Desde desarrollo web hasta aplicaciones
+              de escritorio, puedo aportar las herramientas que hacen tu trabajo más sencillo.
+            </p>
+            <ul class="tag-list" aria-label="Herramientas de desarrollo">
+              <li>C++</li><li>Premake</li><li>C#</li><li>Git</li><li>HTML</li><li>CSS</li>
+              <li>JavaScript</li><li>Python</li><li>Java</li><li>Pygame</li>
+            </ul>
+          </article>
+          <article class="skill-card">
+            <h3>Complementos</h3>
+            <p>
+              ¿Necesitas algo más? Ningún proyecto es igual a otro, por eso es importante
+              incorporar personalidad a través de otros medios de creación.
+            </p>
+            <ul class="tag-list" aria-label="Herramientas complementarias">
+              <li>Audacity</li><li>FL Studio</li><li>Premiere</li><li>Godot</li><li>Unity</li>
+            </ul>
+          </article>
+        </div>
       </section>
 
-      <section id="projects" aria-labelledby="projects-title">
+      <section class="projects section-shell" id="projects" aria-labelledby="projects-title">
         <h2 id="projects-title">Mis proyectos</h2>
-        <article>
-          <h3>Efecto Joule</h3>
-          <p>
-            Diseño de personaje realizado para la banda de rock indie “La Vaca”. La ilustración fue
-            utilizada para promocionar su último lanzamiento.
-          </p>
-        </article>
-        <article>
-          <h3>Rewind</h3>
-          <p>
-            Videojuego realizado en un mes como parte de la Tranki GameJam. Se exploran las dinámicas
-            de trabajo en equipo bajo presión.
-          </p>
-        </article>
-        <article>
-          <h3>Sophia <span>(en progreso)</span></h3>
-          <p>
-            El proyecto más reciente en el que estoy trabajando. Un trabajo colaborativo para crear
-            un graficador matemático didáctico.
-          </p>
-        </article>
+        <div class="projects-grid">
+          <article class="project-card project-joule">
+            <div class="project-art" aria-hidden="true"><span>Efecto Joule</span></div>
+            <div class="project-copy">
+              <h3>Efecto Joule</h3>
+              <p>
+                Diseño de personaje realizado para la banda de rock indie “La Vaca”. La ilustración
+                fue utilizada para promocionar su último lanzamiento.
+              </p>
+            </div>
+          </article>
+          <article class="project-card project-rewind">
+            <div class="project-art" aria-hidden="true"><span>REWIND</span></div>
+            <div class="project-copy">
+              <h3>Rewind</h3>
+              <p>
+                Videojuego realizado en un mes como parte de la Tranki GameJam. Se exploran las
+                dinámicas de trabajo en equipo bajo presión.
+              </p>
+            </div>
+          </article>
+          <article class="project-card project-sophia">
+            <div class="project-art" aria-hidden="true"><span>Sophia</span></div>
+            <div class="project-copy">
+              <h3>Sophia <span>(work in progress)</span></h3>
+              <p>
+                El proyecto más reciente en el que estoy trabajando. Un trabajo colaborativo para
+                crear un graficador matemático didáctico.
+              </p>
+            </div>
+          </article>
+        </div>
       </section>
 
-      <section id="metrics" aria-labelledby="metrics-title">
+      <section class="metrics section-shell" id="metrics" aria-labelledby="metrics-title">
         <h2 id="metrics-title">Algunas métricas</h2>
-        <dl>
+        <dl class="metrics-grid">
           <div>
             <dt>Años de estudio</dt>
             <dd>2</dd>
@@ -165,34 +181,37 @@
         </dl>
       </section>
 
-      <section id="experience" aria-labelledby="experience-title">
+      <section class="experience section-shell" id="experience" aria-labelledby="experience-title">
         <h2 id="experience-title">Formación</h2>
-        <ul>
-          <li>Diseño Gráfico Digital (Curso UTN)</li>
-          <li>Desarrollo de Videojuegos (Curso UTN)</li>
-          <li>Audio Digital (Curso)</li>
-          <li>Diseño Web (Curso)</li>
-        </ul>
-        <ol aria-label="Años de formación">
+        <div class="education-card">
+          <ul>
+            <li>Diseño Gráfico Digital (Curso UTN)</li>
+            <li>Desarrollo de Videojuegos (Curso UTN)</li>
+            <li>Audio Digital (Curso)</li>
+            <li>Diseño Web (Curso)</li>
+          </ul>
+          <span class="education-year">2024</span>
+        </div>
+        <ol class="timeline" aria-label="Años de formación">
           <li>2024</li>
           <li>2025</li>
           <li>2026</li>
         </ol>
       </section>
 
-      <section id="contact" aria-labelledby="contact-title">
+      <section class="contact section-shell" id="contact" aria-labelledby="contact-title">
         <h2 id="contact-title">Contactame</h2>
-        <ul>
-          <li><a href="mailto:valentin.dutruel05@gmail.com">E-mail: valentin.dutruel05@gmail.com</a></li>
-          <li><a href="https://github.com/Pendorchoide" target="_blank" rel="noopener noreferrer">GitHub: github.com/Pendorchoide</a></li>
-          <li><a href="https://www.linkedin.com/in/valentin-dutruel-581369336/" target="_blank" rel="noopener noreferrer">LinkedIn: perfil de Valentín Dutruel</a></li>
+        <ul class="contact-links">
+          <li><a href="mailto:valentin.dutruel05@gmail.com"><span aria-hidden="true">✉</span> E-mail <span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://github.com/Pendorchoide" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">GH</span> GitHub <span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://www.linkedin.com/in/valentin-dutruel-581369336/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">in</span> LinkedIn <span aria-hidden="true">↗</span></a></li>
         </ul>
-        <p><a href="mailto:valentin.dutruel05@gmail.com">Creemos algo</a></p>
+        <a class="button button-accent contact-cta" href="mailto:valentin.dutruel05@gmail.com">Creemos algo</a>
       </section>
     </main>
 
-    <footer id="footer">
-      <nav aria-label="Navegación del pie de página">
+    <footer class="site-footer" id="footer">
+      <nav class="footer-nav" aria-label="Navegación del pie de página">
         <a href="#about">Sobre mí</a>
         <a href="#skills">Habilidades</a>
         <a href="#projects">Proyectos</a>
@@ -200,8 +219,8 @@
         <a href="#experience">Formación</a>
         <a href="#contact">Contacto</a>
       </nav>
-      <p>© 2026 Valentín Dutruel</p>
-      <nav aria-label="Redes sociales del pie de página">
+      <p class="footer-copyright">© 2026 Valentín Dutruel</p>
+      <nav class="footer-socials" aria-label="Redes sociales del pie de página">
         <a href="mailto:valentin.dutruel05@gmail.com">E-mail</a>
         <a href="https://github.com/Pendorchoide" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/valentin-dutruel-581369336/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
