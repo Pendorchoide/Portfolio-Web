@@ -85,20 +85,6 @@ h2 {
   background: rgb(25 25 25 / 96%);
 }
 
-.site-header::after {
-  position: absolute;
-  z-index: 0;
-  top: 2.1875rem;
-  right: 0;
-  left: 0;
-  height: 2.3125rem;
-  background: url("./assets/granulado-general.webp") center top / auto 37.75rem no-repeat;
-  content: "";
-  mix-blend-mode: multiply;
-  opacity: 0.88;
-  pointer-events: none;
-}
-
 .brand {
   display: inline-flex;
   min-width: 0;
@@ -121,6 +107,8 @@ h2 {
   color: var(--color-background-deep);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
+  line-height: 1;
+  padding-top: 2px;
 }
 
 .site-nav,
@@ -282,15 +270,15 @@ h2 {
   min-height: 33.1875rem;
   align-items: flex-start;
   background-color: var(--color-hero-base);
-  background-image: radial-gradient(ellipse at 50% 50%, #262626 0%, #000000 100%);
+  background-image: linear-gradient(90deg, #000000 0%, rgb(0 0 0 / 0%) 100%);
   background-position: center;
   background-size: 100% 100%;
 }
 
 .hero::before {
   inset: 0;
-  background: url("./assets/svg-curves/curvas-hero.svg") center bottom / 100% auto no-repeat;
-  opacity: 0.22;
+  background: url("./assets/svg-curves/curvas-hero.svg") center calc(100% + 8rem) / 100% auto no-repeat;
+  opacity: 0.55;
 }
 
 .hero::after {
@@ -298,6 +286,7 @@ h2 {
   background: url("./assets/granulado-general.webp") center -2.3125rem / auto 37.75rem no-repeat;
   mix-blend-mode: multiply;
   opacity: 0.88;
+  clip-path: inset(0);
 }
 
 .hero-content {
@@ -324,8 +313,9 @@ h2 {
 
 .hero-description {
   max-width: 31rem;
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-8);
   font-size: var(--font-size-base);
+  font-weight: 300;
   line-height: 1.4;
 }
 
@@ -357,17 +347,15 @@ h2 {
 
 .about::before {
   inset: 0;
-  background: url("./assets/svg-curves/curvas-sobre-mi.svg") center center / 100% auto no-repeat;
-}
-
-.about::after {
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 2.25rem;
-  background: url("./assets/granulado-general.webp") center bottom / auto 37.75rem no-repeat;
-  mix-blend-mode: multiply;
-  opacity: 0.88;
+  background:
+    linear-gradient(
+      90deg,
+      rgb(0 0 0 / 55%) 0%,
+      transparent 35%,
+      transparent 65%,
+      rgb(0 0 0 / 55%) 100%
+    ),
+    url("./assets/svg-curves/curvas-sobre-mi.svg") center center / 100% auto no-repeat;
 }
 
 .about-content {
@@ -376,10 +364,16 @@ h2 {
 }
 
 .profile-card {
-  width: min(100%, 13rem);
+  width: min(100%, 8rem);
   grid-area: profile;
   order: 2;
   align-self: center;
+  margin: 0;
+  padding: 5px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--color-white);
 }
 
 .values-list {
@@ -389,25 +383,26 @@ h2 {
 .profile-image {
   display: block;
   width: 100%;
-  height: 15.5rem;
+  height: 6rem;
+  filter: grayscale(1);
   object-fit: cover;
   object-position: center 24%;
 }
 
 .profile-card figcaption {
   display: grid;
-  gap: 0.1rem;
-  padding: var(--space-2) var(--space-1) var(--space-1);
+  gap: 0;
+  padding: var(--space-1) 0 0;
 }
 
 .profile-card figcaption strong {
-  font-size: var(--font-size-sm);
+  font-size: 0.75rem;
   font-weight: var(--font-weight-medium);
 }
 
 .profile-card figcaption span {
   color: #555;
-  font-size: var(--font-size-xs);
+  font-size: 0.625rem;
 }
 
 .about-content h2 {
@@ -419,6 +414,8 @@ h2 {
   margin-bottom: var(--space-3);
   font-size: var(--font-size-base);
   line-height: 1.45;
+  text-align: justify;
+  text-align-last: left;
 }
 
 .values-list {
@@ -753,13 +750,21 @@ h2 {
 
   .profile-card {
     width: 100%;
-    max-width: 18rem;
+    max-width: 13rem;
     background: var(--color-text);
     color: var(--color-background-deep);
   }
 
   .profile-image {
-    height: 21rem;
+    height: 10rem;
+  }
+
+  .profile-card figcaption strong {
+    font-size: var(--font-size-sm);
+  }
+
+  .profile-card figcaption span {
+    font-size: var(--font-size-xs);
   }
 
   .about-content h2 {
@@ -768,6 +773,7 @@ h2 {
 
   .about-content {
     max-width: 30rem;
+    container-type: inline-size;
   }
 
   .about-content {
@@ -879,6 +885,19 @@ h2 {
     padding-inline: var(--space-8);
   }
 
+  .hero::before {
+    background-position: center calc(100% + 24.875rem);
+  }
+
+  .hero-description {
+    margin-bottom: var(--space-5);
+  }
+
+  .hero-actions,
+  .availability {
+    transform: translateY(4.375rem);
+  }
+
   .projects::before {
     background: url("./assets/svg-curves/curvas-proyectos.svg") center center / 100% auto no-repeat;
   }
@@ -900,14 +919,31 @@ h2 {
   }
 
   .site-nav a {
+    position: relative;
     font-size: var(--font-size-sm);
     text-decoration: none;
     white-space: nowrap;
   }
 
+  .site-nav a::after {
+    position: absolute;
+    right: 0;
+    bottom: -0.3em;
+    left: 0;
+    height: 2px;
+    background: var(--color-accent-gradient);
+    content: "";
+    opacity: 0;
+    transition: opacity 160ms ease;
+  }
+
   .site-nav a:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.3em;
+    color: var(--color-text);
+  }
+
+  .site-nav a:hover::after,
+  .site-nav a:focus-visible::after {
+    opacity: 1;
   }
 
   .mobile-menu {
@@ -936,19 +972,58 @@ h2 {
     max-width: 29rem;
   }
 
+  .hero {
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    margin-top: 1.25rem;
+  }
+
   .about {
     min-height: 37.6875rem;
-    grid-template-columns: 20rem minmax(0, 30rem);
-    gap: clamp(var(--space-10), 7vw, 6rem);
+    padding-right: var(--space-4);
+    padding-left: clamp(var(--space-4), 15.2778vw, 13.75rem);
+    justify-content: start;
+    grid-template-columns: minmax(0, 20rem) minmax(0, 30rem);
+    gap: clamp(var(--space-6), 6.25vw, 5.625rem);
     row-gap: var(--space-6);
   }
 
   .profile-card {
+    display: flex;
+    width: 100%;
+    aspect-ratio: 20 / 29;
     max-width: 20rem;
+    flex-direction: column;
+    align-self: start;
+    padding: var(--space-3);
   }
 
   .profile-image {
-    height: 24rem;
+    min-height: 0;
+    flex: 1;
+  }
+
+  .profile-card figcaption {
+    padding: var(--space-3) var(--space-1) 0;
+  }
+
+  .profile-card figcaption strong {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: var(--font-weight-medium);
+    line-height: 1.1;
+  }
+
+  .profile-card figcaption span {
+    font-size: 1.125rem;
+    line-height: 1.2;
+  }
+
+  .about-content h2 {
+    width: 100%;
+    font-size: clamp(2.375rem, 11.9cqi, 3.5625rem);
   }
 
   .skills {
