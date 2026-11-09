@@ -445,8 +445,12 @@ h2 {
 
 .skills::after {
   inset: 0;
-  background: linear-gradient(180deg, #000000 0%, #262626 49.9162%, #262626 100%);
-  opacity: 0.5;
+  background: linear-gradient(
+    90deg,
+    rgb(0 0 0 / 50%) 0%,
+    transparent 50%,
+    rgb(0 0 0 / 50%) 100%
+  );
 }
 
 .skills::before {
@@ -1028,6 +1032,11 @@ h2 {
 
   .skills {
     min-height: 37.6875rem;
+    padding-top: 4.5rem;
+  }
+
+  .skills > h2 {
+    margin-bottom: 2.5rem;
   }
 
   .skills > h2,
@@ -1053,10 +1062,11 @@ h2 {
 
   .skills-grid {
     align-content: start;
+    flex: none;
   }
 
   .skill-card {
-    min-height: 21rem;
+    min-height: 23.125rem;
   }
 
   .projects {
