@@ -507,21 +507,21 @@ h2 {
   min-height: 18rem;
 }
 
-.project-art {
-  overflow: hidden;
-  border-bottom: var(--border-style);
-  background: var(--color-background-deep);
-}
-
 .project-art img {
   display: block;
   width: 100%;
-  height: 9.5rem;
+  height: 10rem;
+  background: var(--color-background-deep);
+  filter: grayscale(1);
   object-fit: cover;
 }
 
 .project-joule .project-art img {
   object-position: center 34%;
+}
+
+.project-art img {
+  border-radius: var(--radius-sm);
 }
 
 .metrics {
@@ -535,6 +535,24 @@ h2 {
 .metrics::after {
   inset: 0;
   background: url("./assets/granulado-arcoiris-metricas.webp") center bottom / 100% auto no-repeat;
+}
+
+.metrics {
+  background-image: url("./assets/granulado-general.webp");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: auto 37.75rem;
+  background-blend-mode: multiply;
+}
+
+.metrics::before {
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(0 0 0 / 50%) 0%,
+    transparent 50%,
+    rgb(0 0 0 / 50%) 100%
+  );
 }
 
 .metrics-grid {
@@ -571,13 +589,26 @@ h2 {
   width: min(100%, 30rem);
 }
 
+.education-card {
+  border-color: var(--color-text);
+}
+
 .education-card ul {
   display: grid;
+  min-height: calc(4 * 1.5em + 3 * var(--space-2));
   gap: var(--space-2);
   margin: 0;
   padding: 0;
   font-size: var(--font-size-xs);
   list-style: none;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.education-card.is-transitioning ul {
+  opacity: 0;
+  transform: translateY(4px);
 }
 
 .education-card li::before {
@@ -615,15 +646,37 @@ h2 {
 
 .timeline li {
   position: relative;
+  min-height: calc(var(--space-6) + 1.3125rem);
   padding-top: var(--space-6);
   color: var(--color-text-muted);
   font-size: var(--font-size-xs);
   text-align: center;
 }
 
-.timeline li::before {
+.timeline button {
   position: absolute;
   z-index: 1;
+  inset: 0;
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--space-6) 0 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+.timeline button:focus-visible {
+  outline: 2px solid var(--color-accent-gold);
+  outline-offset: 3px;
+}
+
+.timeline button::before {
+  position: absolute;
   top: 0;
   left: 50%;
   width: 1.15rem;
@@ -635,14 +688,29 @@ h2 {
   transform: translateX(-50%);
 }
 
-.timeline li:first-child::before {
-  border-color: var(--color-accent-gold);
-  box-shadow: 0 0 0 2px var(--color-accent-coral);
+.timeline button.is-active::before {
+  border-color: var(--color-text);
+  box-shadow: none;
 }
 
 .contact {
   min-height: 25.125rem;
   background: var(--color-background);
+  background-image: url("./assets/granulado-general.webp");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: auto 37.75rem;
+  background-blend-mode: multiply;
+}
+
+.contact::before {
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(0 0 0 / 50%) 0%,
+    transparent 50%,
+    rgb(0 0 0 / 50%) 100%
+  );
 }
 
 .contact::after {
@@ -671,8 +739,25 @@ h2 {
   min-height: 2rem;
   align-items: center;
   gap: var(--space-2);
+  font-family: var(--font-body);
   font-size: var(--font-size-base);
+  font-weight: 300;
   text-decoration: none;
+}
+
+.contact-links img {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 auto;
+  filter: brightness(0) invert(1);
+}
+
+.contact-link-label {
+  display: inline;
+}
+
+.contact-link-address {
+  display: none;
 }
 
 .contact-links a span:last-child {
@@ -684,7 +769,8 @@ h2 {
   width: fit-content;
   min-width: 8.5rem;
   margin: var(--space-8) auto 0;
-  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  border-radius: var(--radius-lg);
 }
 
 .site-footer {
@@ -903,7 +989,9 @@ h2 {
   }
 
   .projects::before {
-    background: url("./assets/svg-curves/curvas-proyectos.svg") center center / 100% auto no-repeat;
+    background:
+      linear-gradient(90deg, rgb(0 0 0 / 50%) 0%, transparent 100%),
+      url("./assets/svg-curves/curvas-proyectos.svg") center center / 100% auto no-repeat;
   }
 
   .brand {
@@ -1071,15 +1159,30 @@ h2 {
 
   .projects {
     min-height: 39.9375rem;
+    padding-top: 4.5rem;
   }
 
   .projects > h2 {
-    text-align: center;
+    margin-bottom: 2.5rem;
+    text-align: right;
+  }
+
+  .project-joule .project-art img {
+    object-position: center 0%;
+  }
+
+  .project-rewind .project-art img {
+    object-position: center 20%;
   }
 
   .projects-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(var(--space-6), 4vw, var(--space-12));
+    width: calc(100% + 1.5rem);
+    max-width: none;
+    grid-template-columns: repeat(3, minmax(0, 19.125rem));
+    justify-content: space-between;
+    gap: 0;
+    margin-right: 0;
+    margin-left: 0.75rem;
   }
 
   .projects {
@@ -1087,23 +1190,11 @@ h2 {
   }
 
   .project-card {
-    min-height: 23rem;
+    min-height: 24.5rem;
   }
 
   .project-art img {
-    height: 11rem;
-  }
-
-  .project-copy {
-    padding: var(--space-3);
-  }
-
-  .project-copy h3 {
-    font-size: var(--font-size-base);
-  }
-
-  .project-copy p {
-    font-size: var(--font-size-sm);
+    height: 13rem;
   }
 
   .metrics {
@@ -1132,9 +1223,23 @@ h2 {
     font-size: var(--font-size-sm);
   }
 
+  .timeline li {
+    min-height: calc(3rem + 1.3125rem);
+    padding-top: 3rem;
+  }
+
+  .timeline button {
+    padding-top: 3rem;
+  }
+
+  .timeline button::before {
+    width: 2.5rem;
+  }
+
   .contact {
-    min-height: 33.4375rem;
-    padding-block: var(--space-8);
+    min-height: 32.375rem;
+    padding-top: 5rem;
+    padding-bottom: 4.625rem;
   }
 
   .contact > h2,
@@ -1143,19 +1248,38 @@ h2 {
   }
 
   .contact > h2 {
+    margin-bottom: 2.5rem;
+    font-size: 3.625rem;
     text-align: left;
   }
 
   .contact-links {
+    gap: 1.25rem;
     margin-bottom: var(--space-6);
   }
 
   .contact-cta {
-    margin-top: var(--space-6);
+    margin-top: 3rem;
+    padding: 0.25rem 1.125rem;
+    font-size: 2.375rem;
+    line-height: 1.1;
   }
 
   .contact-links a {
     font-size: var(--font-size-xl);
+  }
+
+  .contact-links img {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .contact-link-label {
+    display: none;
+  }
+
+  .contact-link-address {
+    display: inline;
   }
 
   .footer-nav a,

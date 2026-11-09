@@ -9,6 +9,7 @@
     >
     <title>Valentín Dutruel — Desarrollador y Diseñador</title>
     <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/education.js" defer></script>
   </head>
   <body>
     <header class="site-header" id="header">
@@ -152,8 +153,9 @@
             <div class="project-copy">
               <h3>Efecto Joule</h3>
               <p>
-                Diseño de personaje realizado para la banda de rock indie “La Vaca”. La ilustración
-                fue utilizada para promocionar su último lanzamiento.
+                Diseño de personaje realizado para la banda de rock indie
+                <strong>“La Vaca”</strong>. La ilustración fue utilizada para promocionar su último
+                lanzamiento.
               </p>
             </div>
           </article>
@@ -162,10 +164,14 @@
               <img src="styles/assets/rewind.webp" alt="Ilustración promocional del videojuego Rewind" width="1260" height="1000" loading="lazy">
             </div>
             <div class="project-copy">
-              <h3>Rewind</h3>
+              <h3>
+                Rewind
+                <span class="project-link-indicator" aria-hidden="true">↗</span>
+              </h3>
               <p>
-                Videojuego realizado en un mes como parte de la Tranki GameJam. Se exploran las
-                dinámicas de trabajo en equipo bajo presión.
+                Videojuego realizado en un mes como parte de la
+                <strong>Tranki GameJam</strong>. Se exploran las dinámicas de
+                <strong>trabajo en equipo bajo presión</strong>.
               </p>
             </div>
           </article>
@@ -174,10 +180,12 @@
               <img src="styles/assets/sophia.webp" alt="Interfaz del graficador matemático Sophia" width="1920" height="984" loading="lazy">
             </div>
             <div class="project-copy">
-              <h3>Sophia <span>(work in progress)</span></h3>
+              <h3>
+                Sophia <span>(work in progress)</span>
+              </h3>
               <p>
                 El proyecto más reciente en el que estoy trabajando. Un trabajo colaborativo para
-                crear un graficador matemático didáctico.
+                crear un <strong>graficador matemático didáctico</strong>.
               </p>
             </div>
           </article>
@@ -209,7 +217,7 @@
       <section class="experience section-shell" id="experience" aria-labelledby="experience-title">
         <h2 id="experience-title">Formación</h2>
         <div class="education-card">
-          <ul>
+          <ul id="education-courses" aria-live="polite" aria-atomic="true">
             <li>Diseño Gráfico Digital (Curso UTN)</li>
             <li>Desarrollo de Videojuegos (Curso UTN)</li>
             <li>Audio Digital (Curso)</li>
@@ -218,18 +226,51 @@
           <span class="education-year">2024</span>
         </div>
         <ol class="timeline" aria-label="Años de formación">
-          <li>2024</li>
-          <li>2025</li>
-          <li>2026</li>
+          <li>
+            <button class="is-active" type="button" data-year="2024" aria-pressed="true" aria-controls="education-courses">
+              2024
+            </button>
+          </li>
+          <li>
+            <button type="button" data-year="2025" aria-pressed="false" aria-controls="education-courses">
+              2025
+            </button>
+          </li>
+          <li>
+            <button type="button" data-year="2026" aria-pressed="false" aria-controls="education-courses">
+              2026
+            </button>
+          </li>
         </ol>
       </section>
 
       <section class="contact section-shell" id="contact" aria-labelledby="contact-title">
         <h2 id="contact-title">Contactame</h2>
         <ul class="contact-links">
-          <li><a href="mailto:valentin.dutruel05@gmail.com"><span aria-hidden="true">✉</span> E-mail <span aria-hidden="true">↗</span></a></li>
-          <li><a href="https://github.com/Pendorchoide" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">GH</span> GitHub <span aria-hidden="true">↗</span></a></li>
-          <li><a href="https://www.linkedin.com/in/valentin-dutruel-581369336/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">in</span> LinkedIn <span aria-hidden="true">↗</span></a></li>
+          <li>
+            <a href="mailto:valentin.dutruel05@gmail.com">
+              <img src="styles/assets/svg/mail.svg" alt="" width="18" height="18">
+              <span class="contact-link-label">E-mail</span>
+              <span class="contact-link-address">valentin.dutruel05@gmail.com</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/Pendorchoide" target="_blank" rel="noopener noreferrer">
+              <img src="styles/assets/svg/GitHub.svg" alt="" width="18" height="18">
+              <span class="contact-link-label">GitHub</span>
+              <span class="contact-link-address">https://github.com/Pendorchoide</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/valentin-dutruel-581369336/" target="_blank" rel="noopener noreferrer">
+              <img src="styles/assets/svg/linkedin.svg" alt="" width="18" height="18">
+              <span class="contact-link-label">LinkedIn</span>
+              <span class="contact-link-address">https://www.linkedin.com/in/valentin-dutruel-581369336/</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </li>
         </ul>
         <a class="button button-accent contact-cta" href="mailto:valentin.dutruel05@gmail.com">Creemos algo</a>
       </section>
