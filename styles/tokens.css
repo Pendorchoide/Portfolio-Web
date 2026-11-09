@@ -1,3 +1,47 @@
+@font-face {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url("./assets/fonts/dm-sans-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url("./assets/fonts/dm-sans-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4,
+    U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("./assets/fonts/space-grotesk-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("./assets/fonts/space-grotesk-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4,
+    U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
 :root {
   color-scheme: dark;
 
@@ -6,7 +50,6 @@
   --color-background-deep: #191919;
   --color-hero-base: #212121;
   --color-surface: #1c1c1c;
-  --color-surface-raised: #212121;
   --color-text: #f2f2f9;
   --color-text-muted: #c8c8c8;
   --color-border: #3f3f3f;
@@ -15,29 +58,39 @@
   --color-accent-gold: #ffdc84;
   --color-accent-aqua: #74cbdb;
   --color-accent-gradient: linear-gradient(
-    105deg,
+    90deg,
     var(--color-accent-coral) 0%,
-    var(--color-accent-gold) 52%,
+    var(--color-accent-gold) 35%,
+    var(--color-accent-aqua) 100%
+  );
+  --color-accent-gradient-soft: linear-gradient(
+    90deg,
+    var(--color-accent-coral) 0%,
+    var(--color-accent-gold) 62%,
     var(--color-accent-aqua) 100%
   );
 
   /* Tipografía */
-  --font-heading: "Space Grotesk", sans-serif;
-  --font-body: "DM Sans", sans-serif;
+  --font-heading: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body: "DM Sans", "Segoe UI", sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Escala tipográfica */
   --font-size-xs: 0.875rem;
   --font-size-sm: 1rem;
   --font-size-base: 1.25rem;
   --font-size-lg: 1.5rem;
   --font-size-xl: 1.75rem;
-  --font-size-2xl: clamp(2.375rem, 4.0278vw, 3.625rem);
-  --font-size-display: clamp(3rem, 5.4167vw, 4.875rem);
-  --font-size-card-title: clamp(1.75rem, 2.6389vw, 2.375rem);
+  --font-size-2xl: 3.625rem;
+  --font-size-display: 3rem;
   --font-size-metric-label: 0.875rem;
   --font-size-metric-value: 4.25rem;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
-  --line-height-body: 1.5;
+
+  --line-height-body: 1.2;
+  --line-height-copy: 1.62;
   --line-height-heading: 1.1;
 
   /* Espaciado, en múltiplos de 4px */
@@ -56,12 +109,31 @@
   --border-width: 1px;
   --border-style: var(--border-width) solid var(--color-border);
   --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
   --radius-pill: 999px;
 
   /* Elevación y layout */
-  --shadow-card: 0 0.25rem 1rem rgb(0 0 0 / 20%);
-  --content-width: 65rem;
+  --shadow-card: 0 0 1.5rem rgb(0 0 0 / 45%);
+  --content-width: 68.5rem;
   --header-height: 4.5rem;
+  --section-gutter: 2.5rem;
+}
+
+@media (min-width: 20rem) {
+  :root {
+    --font-size-display: clamp(3rem, 12.3vw, 4.875rem);
+  }
+}
+
+@media (min-width: 80rem) {
+  :root {
+    --font-size-display: 4.875rem;
+    --font-size-2xl: 3.625rem;
+    --font-size-xl: 1.75rem;
+    --font-size-lg: 2.375rem;
+    --font-size-metric-label: 1.5rem;
+    --font-size-metric-value: 8rem;
+    --header-height: 4.5rem;
+  }
 }

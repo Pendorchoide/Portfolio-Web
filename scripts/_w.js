@@ -1,0 +1,21 @@
+﻿const out = {};
+const ready = document.fonts.ready.then(() => {
+  const h1 = document.querySelector(".hero h1");
+  const cs = getComputedStyle(h1);
+  out.size = cs.fontSize;
+  out.family = cs.fontFamily;
+  out.text = h1.textContent;
+  out.codes = Array.from(h1.firstChild.textContent).map((c) => c.charCodeAt(0));
+  const ctx = document.createElement("canvas").getContext("2d");
+  ctx.font = `${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+  out.canvasText = h1.firstChild.textContent;
+  out.canvasWidth = ctx.measureText(out.canvasText).width;
+  out.canvasClean = ctx.measureText("Dise\u00f1os con ").width;
+  const r = document.createRange();
+  r.selectNodeContents(h1.firstChild);
+  out.rangeWidth = r.getBoundingClientRect().width;
+  const pre = document.createElement("pre");
+  pre.id = "wjson";
+  pre.textContent = JSON.stringify(out, null, 1);
+  document.body.appendChild(pre);
+});

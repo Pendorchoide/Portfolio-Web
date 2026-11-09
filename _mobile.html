@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>mobile probe</title>
+    <style>
+      body {
+        margin: 0;
+        background: #fff;
+      }
+
+      iframe {
+        display: block;
+        width: 390px;
+        height: 6300px;
+        border: 0;
+      }
+
+      pre {
+        position: absolute;
+        top: 0;
+        left: 400px;
+        font: 11px/1.3 monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe src="_probe.html" title="mobile"></iframe>
+    <script>
+      window.addEventListener("message", (event) => {
+        const pre = document.createElement("pre");
+        pre.id = "probe-output";
+        pre.textContent = String(event.data);
+        const old = document.getElementById("probe-output");
+        if (old) old.remove();
+        document.body.appendChild(pre);
+      });
+    </script>
+  </body>
+</html>

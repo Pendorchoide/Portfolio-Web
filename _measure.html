@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Portfolio de Valentín Dutruel, desarrollador y diseñador. Proyectos, habilidades y formación."
+    >
+    <meta name="theme-color" content="#191919">
+    <meta name="color-scheme" content="dark">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:title" content="Valentín Dutruel — Desarrollador y Diseñador">
+    <meta
+      property="og:description"
+      content="Portfolio de Valentín Dutruel, desarrollador y diseñador. Proyectos, habilidades y formación."
+    >
+    <meta property="og:image" content="styles/assets/sophia.webp">
+    <title>Valentín Dutruel — Desarrollador y Diseñador</title>
+    <link rel="icon" href="styles/assets/favicon.svg" type="image/svg+xml">
+    <link
+      rel="preload"
+      href="styles/assets/fonts/dm-sans-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    >
+    <link
+      rel="preload"
+      href="styles/assets/fonts/space-grotesk-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    >
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/_measure.css">
+    <script src="scripts/education.js" defer></script>
+    <script src="scripts/menu.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+    <header class="site-header" id="header">
+      <a class="brand" href="#hero">
+        <span class="brand-mark" aria-hidden="true">VD</span>
+        <span class="brand-name">Valentín Dutruel</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="#about">Sobre mí</a>
+        <a href="#skills">Habilidades</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#metrics">Métricas</a>
+        <a href="#experience">Formación</a>
+        <a href="#contact">Contacto</a>
+      </nav>
+
+      <details class="mobile-menu">
+        <summary aria-controls="mobile-menu-nav" aria-expanded="false">
+          <img src="styles/assets/svg/menu.svg" alt="" width="40" height="15">
+          <span class="visually-hidden">Menú de navegación</span>
+        </summary>
+        <nav class="mobile-menu-nav" id="mobile-menu-nav" aria-label="Navegación móvil">
+          <a href="#about">Sobre mí</a>
+          <a href="#skills">Habilidades</a>
+          <a href="#projects">Proyectos</a>
+          <a href="#metrics">Métricas</a>
+          <a href="#experience">Formación</a>
+          <a href="#contact">Contacto</a>
+        </nav>
+      </details>
+
+      <nav class="header-socials" aria-label="Redes sociales">
+        <a
+          href="https://www.linkedin.com/in/valentin-dutruel-581369336/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <img src="styles/assets/svg/linkedin.svg" alt="" width="18" height="18">
+        </a>
+        <a
+          href="https://github.com/Pendorchoide"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <img src="styles/assets/svg/GitHub.svg" alt="" width="18" height="18">
+        </a>
+        <span class="theme-indicator" title="Modo oscuro activo">
+          <img src="styles/assets/svg/dark_mode.svg" alt="Modo oscuro activo" width="18" height="18">
+        </span>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="hero" aria-labelledby="hero-title">
+        <div class="shell">
+          <h1 id="hero-title">Diseños con <span>Creatividad</span></h1>
+          <p class="hero-description">
+            Soy Valentín Dutruel, desarrollador y diseñador. Mi trabajo se centra en la creación de
+            software con calidad, enfocado al usuario y su comodidad.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-accent" href="#projects">Ver proyectos</a>
+            <a class="button button-light" href="#contact">Contáctame</a>
+          </div>
+          <p class="availability">Abierto para trabajar <span>·</span> Colón, Entre Ríos, Argentina</p>
+        </div>
+      </section>
+
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="shell about-layout">
+          <figure class="profile-card">
+            <img
+              class="profile-image"
+              src="styles/assets/gatito%20mockup.webp"
+              alt="Gatito retratado de frente"
+              width="579"
+              height="900"
+              loading="lazy"
+            >
+            <figcaption>
+              <strong>Valentín Dutruel</strong>
+              <span>Desarrollador · Diseñador</span>
+            </figcaption>
+          </figure>
+
+          <div class="about-body">
+            <div class="about-content">
+              <h2 id="about-title">Un poco sobre mí</h2>
+              <p>
+                Soy Valentín Dutruel, desarrollador y diseñador. Actualmente me encuentro estudiando
+                la carrera Licenciatura en Sistemas de Información.
+              </p>
+              <p>
+                Mi interés se centra en la creación de software a medida, resuelto con soluciones
+                creativas y fuera de la caja.
+              </p>
+              <p>
+                Mi mejor atributo es la curiosidad, siempre pendiente de aprender cosas nuevas para
+                poder implementar en mi trabajo.
+              </p>
+            </div>
+            <ul class="values-list" aria-label="Principios de trabajo">
+              <li>Esfuerzo</li>
+              <li>Responsabilidad</li>
+              <li>Creatividad</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills" id="skills" aria-labelledby="skills-title">
+        <div class="shell">
+          <h2 id="skills-title">Mis habilidades</h2>
+          <div class="skills-grid">
+            <article class="skill-card">
+              <h3>Diseño</h3>
+              <p>
+                ¿Necesitas crear tu <strong>identidad de marca</strong>,
+                <strong>promocionar tus productos</strong>, o simplemente un
+                <strong>poco de arte</strong>? Mi experiencia abarca desde
+                <strong>ilustraciones 2D</strong>, hasta la creación de modelos
+                <strong>3D</strong>.
+              </p>
+              <ul class="tag-list" aria-label="Herramientas de diseño">
+                <li>Illustrator</li>
+                <li>Photoshop</li>
+                <li>Blender</li>
+                <li>SolidWorks</li>
+                <li>Animate</li>
+                <li>Figma</li>
+                <li>Aseprite</li>
+                <li>Clip Studio Paint</li>
+              </ul>
+            </article>
+
+            <article class="skill-card">
+              <h3>Desarrollo</h3>
+              <p>
+                ¿Buscas <strong>software</strong> que solucione tus problemas? Desde
+                <strong>desarrollo web</strong> hasta
+                <strong>aplicaciones de escritorio</strong>, puedo aportar las herramientas que
+                hacen tu trabajo más sencillo.
+              </p>
+              <ul class="tag-list" aria-label="Herramientas de desarrollo">
+                <li>C++</li>
+                <li>Premake</li>
+                <li>C#</li>
+                <li>Git</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>Java</li>
+                <li>Pygame</li>
+              </ul>
+            </article>
+
+            <article class="skill-card">
+              <h3>Complementos</h3>
+              <p>
+                ¿Necesitas algo más? Ningún proyecto es igual a otro, por eso es importante
+                incorporar <strong>personalidad</strong> a través de
+                <strong>otros medios de creación</strong>.
+              </p>
+              <ul class="tag-list" aria-label="Herramientas complementarias">
+                <li>Audacity</li>
+                <li>FL Studio</li>
+                <li>Premiere</li>
+                <li>Godot</li>
+                <li>Unity</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects" id="projects" aria-labelledby="projects-title">
+        <div class="shell">
+          <h2 id="projects-title">Mis proyectos</h2>
+          <div class="projects-grid">
+            <article class="project-card project-joule">
+              <div class="project-art">
+                <img
+                  src="styles/assets/efecto-joule.webp"
+                  alt="Ilustración del personaje Efecto Joule"
+                  width="720"
+                  height="1280"
+                  loading="lazy"
+                >
+              </div>
+              <div class="project-copy">
+                <h3>Efecto Joule</h3>
+                <p>
+                  Diseño de personaje realizado para la banda de rock indie
+                  <strong>“La Vaca”</strong>. La ilustración fue utilizada para promocionar su
+                  último lanzamiento.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card project-rewind">
+              <div class="project-art">
+                <img
+                  src="styles/assets/rewind.webp"
+                  alt="Ilustración promocional del videojuego Rewind"
+                  width="1260"
+                  height="1000"
+                  loading="lazy"
+                >
+              </div>
+              <div class="project-copy">
+                <h3>Rewind</h3>
+                <p>
+                  Videojuego realizado en un mes como parte de la
+                  <strong>Tranki GameJam</strong>. Se exploran las dinámicas de
+                  <strong>trabajo en equipo bajo presión</strong>.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card project-sophia">
+              <div class="project-art">
+                <img
+                  src="styles/assets/sophia.webp"
+                  alt="Interfaz del graficador matemático Sophia"
+                  width="1920"
+                  height="984"
+                  loading="lazy"
+                >
+              </div>
+              <div class="project-copy">
+                <h3>Sophia <span>(work in progress)</span></h3>
+                <p>
+                  El proyecto más reciente en el que estoy trabajando. Un trabajo colaborativo para
+                  crear un <strong>graficador matemático didáctico</strong>.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics" id="metrics" aria-labelledby="metrics-title">
+        <div class="shell">
+          <h2 id="metrics-title">Algunas métricas</h2>
+          <dl class="metrics-grid">
+            <div>
+              <dt>Años de estudio</dt>
+              <dd>2</dd>
+            </div>
+            <div>
+              <dt>Proyectos</dt>
+              <dd>3</dd>
+            </div>
+            <div>
+              <dt>Herramientas</dt>
+              <dd>14</dd>
+            </div>
+            <div>
+              <dt>Cursos</dt>
+              <dd>4</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="experience" id="experience" aria-labelledby="experience-title">
+        <div class="shell">
+          <h2 id="experience-title">Formación</h2>
+          <div class="education-card">
+            <ul id="education-courses" aria-live="polite" aria-atomic="true">
+              <li>Diseño Gráfico Digital (Curso UTN)</li>
+              <li>Desarrollo de Videojuegos (Curso UTN)</li>
+              <li>Audio Digital (Curso)</li>
+              <li>Diseño Web (Curso)</li>
+            </ul>
+            <span class="education-year">2024</span>
+          </div>
+          <ol class="timeline" aria-label="Años de formación">
+            <li>
+              <button
+                class="is-active"
+                type="button"
+                data-year="2024"
+                aria-pressed="true"
+                aria-controls="education-courses"
+              >
+                2024
+              </button>
+            </li>
+            <li>
+              <button type="button" data-year="2025" aria-pressed="false" aria-controls="education-courses">
+                2025
+              </button>
+            </li>
+            <li>
+              <button type="button" data-year="2026" aria-pressed="false" aria-controls="education-courses">
+                2026
+              </button>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="shell">
+          <h2 id="contact-title">Contáctame</h2>
+          <ul class="contact-links">
+            <li>
+              <a href="mailto:valentin.dutruel05@gmail.com">
+                <img src="styles/assets/svg/mail.svg" alt="" width="30" height="30">
+                <span class="contact-link-label">E-mail</span>
+                <span class="contact-link-address">valentin.dutruel05@gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/Pendorchoide" target="_blank" rel="noopener noreferrer">
+                <img src="styles/assets/svg/GitHub.svg" alt="" width="30" height="30">
+                <span class="contact-link-label">GitHub</span>
+                <span class="contact-link-address">https://github.com/Pendorchoide</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/valentin-dutruel-581369336/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="styles/assets/svg/linkedin.svg" alt="" width="30" height="30">
+                <span class="contact-link-label">LinkedIn</span>
+                <span class="contact-link-address"
+                  >https://www.linkedin.com/in/valentin-dutruel-581369336/</span
+                >
+              </a>
+            </li>
+          </ul>
+          <a class="button button-accent contact-cta" href="mailto:valentin.dutruel05@gmail.com">
+            Creemos algo
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="footer">
+      <div class="footer-inner">
+        <p class="footer-copyright">© 2026 Valentín Dutruel</p>
+        <nav class="footer-nav" aria-label="Navegación del pie de página">
+          <a href="#about">Sobre mí</a>
+          <a href="#skills">Habilidades</a>
+          <a href="#projects">Proyectos</a>
+          <a href="#metrics">Métricas</a>
+          <a href="#experience">Formación</a>
+          <a href="#contact">Contacto</a>
+        </nav>
+        <nav class="footer-socials" aria-label="Redes sociales del pie de página">
+          <a href="mailto:valentin.dutruel05@gmail.com">E-mail</a>
+          <a href="https://github.com/Pendorchoide" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a
+            href="https://www.linkedin.com/in/valentin-dutruel-581369336/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
