@@ -507,21 +507,21 @@ h2 {
   min-height: 18rem;
 }
 
+.project-art {
+  overflow: hidden;
+  border-bottom: var(--border-style);
+  background: var(--color-background-deep);
+}
+
 .project-art img {
   display: block;
   width: 100%;
-  height: 10rem;
-  background: var(--color-background-deep);
-  filter: grayscale(1);
+  height: 9.5rem;
   object-fit: cover;
 }
 
 .project-joule .project-art img {
   object-position: center 34%;
-}
-
-.project-art img {
-  border-radius: var(--radius-sm);
 }
 
 .metrics {
@@ -1071,30 +1071,15 @@ h2 {
 
   .projects {
     min-height: 39.9375rem;
-    padding-top: 4.5rem;
   }
 
   .projects > h2 {
-    margin-bottom: 2.5rem;
-    text-align: right;
-  }
-
-  .project-joule .project-art img {
-    object-position: center 0%;
-  }
-
-  .project-rewind .project-art img {
-    object-position: center 20%;
+    text-align: center;
   }
 
   .projects-grid {
-    width: calc(100% + 1.5rem);
-    max-width: none;
-    grid-template-columns: repeat(3, minmax(0, 19.125rem));
-    justify-content: space-between;
-    gap: 0;
-    margin-right: 0;
-    margin-left: 0.75rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(var(--space-6), 4vw, var(--space-12));
   }
 
   .projects {
@@ -1102,11 +1087,23 @@ h2 {
   }
 
   .project-card {
-    min-height: 24.5rem;
+    min-height: 23rem;
   }
 
   .project-art img {
-    height: 13rem;
+    height: 11rem;
+  }
+
+  .project-copy {
+    padding: var(--space-3);
+  }
+
+  .project-copy h3 {
+    font-size: var(--font-size-base);
+  }
+
+  .project-copy p {
+    font-size: var(--font-size-sm);
   }
 
   .metrics {
