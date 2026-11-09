@@ -33,8 +33,15 @@
         </nav>
       </details>
       <nav class="header-socials" aria-label="Redes sociales">
-        <a href="https://www.linkedin.com/in/valentin-dutruel-581369336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
-        <a href="https://github.com/Pendorchoide" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
+        <a href="https://www.linkedin.com/in/valentin-dutruel-581369336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <img src="styles/assets/svg/linkedin.svg" alt="" width="18" height="18">
+        </a>
+        <a href="https://github.com/Pendorchoide" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <img src="styles/assets/svg/GitHub.svg" alt="" width="18" height="18">
+        </a>
+        <span class="theme-indicator" title="Modo oscuro activo">
+          <img src="styles/assets/svg/dark_mode.svg" alt="Modo oscuro activo" width="18" height="18">
+        </span>
       </nav>
     </header>
 
@@ -56,7 +63,14 @@
 
       <section class="about section-shell" id="about" aria-labelledby="about-title">
         <figure class="profile-card">
-          <div class="profile-placeholder" aria-hidden="true">VD</div>
+          <img
+            class="profile-image"
+            src="styles/assets/gatito%20mockup.webp"
+            alt="Gatito retratado de frente"
+            width="579"
+            height="900"
+            loading="lazy"
+          >
           <figcaption>
             <strong>Valentín Dutruel</strong>
             <span>Desarrollador · Diseñador</span>
@@ -76,12 +90,12 @@
             Mi mejor atributo es la curiosidad, siempre pendiente de aprender cosas nuevas para poder
             implementar en mi trabajo.
           </p>
-          <ul class="values-list" aria-label="Principios de trabajo">
-            <li>Esfuerzo</li>
-            <li>Responsabilidad</li>
-            <li>Creatividad</li>
-          </ul>
         </div>
+        <ul class="values-list" aria-label="Principios de trabajo">
+          <li>Esfuerzo</li>
+          <li>Responsabilidad</li>
+          <li>Creatividad</li>
+        </ul>
       </section>
 
       <section class="skills section-shell" id="skills" aria-labelledby="skills-title">
@@ -127,7 +141,9 @@
         <h2 id="projects-title">Mis proyectos</h2>
         <div class="projects-grid">
           <article class="project-card project-joule">
-            <div class="project-art" aria-hidden="true"><span>Efecto Joule</span></div>
+            <div class="project-art">
+              <img src="styles/assets/efecto-joule.webp" alt="Ilustración del personaje Efecto Joule" width="720" height="1280" loading="lazy">
+            </div>
             <div class="project-copy">
               <h3>Efecto Joule</h3>
               <p>
@@ -137,7 +153,9 @@
             </div>
           </article>
           <article class="project-card project-rewind">
-            <div class="project-art" aria-hidden="true"><span>REWIND</span></div>
+            <div class="project-art">
+              <img src="styles/assets/rewind.webp" alt="Ilustración promocional del videojuego Rewind" width="1260" height="1000" loading="lazy">
+            </div>
             <div class="project-copy">
               <h3>Rewind</h3>
               <p>
@@ -147,7 +165,9 @@
             </div>
           </article>
           <article class="project-card project-sophia">
-            <div class="project-art" aria-hidden="true"><span>Sophia</span></div>
+            <div class="project-art">
+              <img src="styles/assets/sophia.webp" alt="Interfaz del graficador matemático Sophia" width="1920" height="984" loading="lazy">
+            </div>
             <div class="project-copy">
               <h3>Sophia <span>(work in progress)</span></h3>
               <p>

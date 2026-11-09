@@ -7,7 +7,7 @@
   border: 1px solid transparent;
   border-radius: var(--radius-md);
   color: var(--color-background-deep);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   line-height: 1.2;
   text-decoration: none;
@@ -51,7 +51,7 @@
 .skill-card {
   display: flex;
   flex-direction: column;
-  padding: var(--space-4);
+  padding: var(--space-3);
 }
 
 .skill-card h3,
@@ -90,7 +90,7 @@
 }
 
 .tag-list li {
-  padding: 0.14rem 0.45rem;
+  padding: 0.14rem 0.4rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-pill);
   color: var(--color-text);
@@ -112,146 +112,95 @@
   box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 35%);
 }
 
-.project-art {
-  display: grid;
-  min-height: 8.5rem;
-  place-items: center;
-  border-bottom: var(--border-style);
-  background: var(--color-background-deep);
-  color: var(--color-text-muted);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-xl);
-  letter-spacing: 0.08em;
-}
-
-.project-joule .project-art {
-  color: var(--color-accent-gold);
-}
-
-.project-rewind .project-art {
-  color: var(--color-accent-aqua);
-}
-
-.project-sophia .project-art {
-  color: var(--color-text);
-}
-
 .project-copy {
   padding: var(--space-3);
 }
 
 .project-copy h3 {
   margin-bottom: var(--space-2);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-base);
 }
 
 .project-copy h3 span {
   color: var(--color-text-muted);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-regular);
 }
 
 .project-copy p {
   margin: 0;
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
 }
 
 .metrics-grid > div {
   display: flex;
-  min-height: 6.5rem;
+  min-height: 7rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--space-3);
+  padding: var(--space-2);
   text-align: center;
+}
+
+.metrics-grid > div:nth-child(4n + 1) {
+  border-color: var(--color-accent-coral);
 }
 
 .metrics-grid dt {
   order: 2;
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-metric-label);
+  line-height: 1.2;
 }
 
 .metrics-grid dd {
   order: 1;
-  margin: 0;
+  margin: 0 0 var(--space-1);
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-size: var(--font-size-metric-value);
   font-weight: var(--font-weight-regular);
   line-height: 1;
 }
 
 .education-card {
   position: relative;
-  width: min(100%, 30rem);
-  padding: var(--space-4);
+  padding: var(--space-3);
 }
 
-.education-card ul {
-  display: grid;
-  gap: var(--space-2);
-  margin: 0;
-  padding: 0;
-  font-size: var(--font-size-sm);
-  list-style: none;
+@media (min-width: 48rem) {
+  .skill-card {
+    padding: var(--space-4);
+  }
+
+  .project-copy {
+    padding: var(--space-4);
+  }
+
+  .metrics-grid > div {
+    min-height: 0;
+    aspect-ratio: 1;
+    padding: var(--space-3);
+  }
+
+  .education-card {
+    padding: var(--space-4);
+  }
 }
 
-.education-card li::before {
-  margin-right: var(--space-2);
-  color: var(--color-accent-gold);
-  content: "+";
-}
+@media (min-width: 64rem) {
+  .skill-card {
+    padding: var(--space-4);
+  }
 
-.education-year {
-  display: block;
-  margin-top: var(--space-2);
-  color: var(--color-text-muted);
-  font-size: var(--font-size-xs);
-  text-align: right;
-}
+  .skill-card h3 {
+    font-size: var(--font-size-card-title);
+  }
 
-.timeline {
-  position: relative;
-  display: grid;
-  width: min(100%, 30rem);
-  grid-template-columns: repeat(3, 1fr);
-  margin: var(--space-8) 0 0;
-  padding: 0;
-  list-style: none;
-}
+  .project-copy {
+    padding: var(--space-3);
+  }
 
-.timeline::before {
-  position: absolute;
-  top: 0.55rem;
-  right: 0;
-  left: 0;
-  height: 1px;
-  background: var(--color-text-muted);
-  content: "";
-}
+  .metrics-grid > div {
+    min-height: 0;
+  }
 
-.timeline li {
-  position: relative;
-  padding-top: var(--space-6);
-  color: var(--color-text-muted);
-  font-size: var(--font-size-xs);
-  text-align: center;
-}
-
-.timeline li::before {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 50%;
-  width: 1.15rem;
-  aspect-ratio: 1;
-  border: 2px solid var(--color-text);
-  border-radius: 50%;
-  background: var(--color-background);
-  content: "";
-  transform: translateX(-50%);
-}
-
-.timeline li:first-child::before {
-  border-color: var(--color-accent-gold);
-  box-shadow: 0 0 0 2px var(--color-accent-coral);
 }
