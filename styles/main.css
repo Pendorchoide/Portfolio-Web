@@ -613,6 +613,42 @@ h2 {
   width: min(100%, 30rem);
 }
 
+@media (max-width: 47.999rem) {
+  .about::before {
+    background:
+      linear-gradient(
+        90deg,
+        rgb(0 0 0 / 55%) 0%,
+        transparent 35%,
+        transparent 65%,
+        rgb(0 0 0 / 55%) 100%
+      ),
+      url("./assets/svg-curves/curvas-sobre-mi-mobile.svg") center / 100% 100% no-repeat;
+  }
+
+  .projects::before {
+    background:
+      linear-gradient(
+        180deg,
+        rgb(0 0 0 / 50%) 0%,
+        rgb(38 38 38 / 50%) 49.9162%,
+        rgb(38 38 38 / 50%) 100%
+      ),
+      url("./assets/svg-curves/curvas-proyectos-mobile.svg") center / 100% 100% no-repeat;
+  }
+
+  .experience::before {
+    background:
+      linear-gradient(
+        180deg,
+        rgb(0 0 0 / 50%) 0%,
+        rgb(38 38 38 / 50%) 49.9162%,
+        rgb(38 38 38 / 50%) 100%
+      ),
+      url("./assets/svg-curves/curvas-formacion-mobile.svg") center / 100% 100% no-repeat;
+  }
+}
+
 .education-card {
   border-color: var(--color-text);
   padding: var(--space-4) var(--space-1);
