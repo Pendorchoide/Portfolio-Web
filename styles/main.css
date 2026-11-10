@@ -430,12 +430,10 @@ h2 {
 }
 
 .profile-card {
-  width: min(100%, 8rem);
-  min-height: 464px;
+  /* width: min(100%, 8rem); */
   grid-area: profile;
   order: 2;
   align-self: center;
-  margin: 0;
   padding: 5px;
   border: 0;
   border-radius: 0;
@@ -663,8 +661,40 @@ h2 {
 }
 
 @media (max-width: 767.984px) {
+  /* ── Hero ── */
+  .hero {
+    min-height: auto;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    margin: var(--space-6) 0 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.25rem, 10vw, 3rem);
+  }
+
+  .hero-description {
+    font-size: var(--font-size-sm);
+  }
+
   .hero::before {
     background: url("./assets/svg-curves/curvas-hero-mobile.svg") center / 100% 100% no-repeat;
+  }
+
+  /* ── About ── */
+  .about {
+    min-height: auto;
+    gap: var(--space-4);
+  }
+
+  .about-content h2 {
+    text-align: left;
+  }
+
+  .about-content p {
+    text-align: left;
   }
 
   .profile-card {
@@ -698,13 +728,6 @@ h2 {
     line-height: 1.2;
   }
 
-  .brand-name{
-    display:none;
-  }
-
-  .brand-mark{
-    margin-left: var(--space-4);
-  }
   .about::before {
     background:
       linear-gradient(
@@ -717,9 +740,55 @@ h2 {
       url("./assets/svg-curves/curvas-sobre-mi-mobile.svg") center / 100% 100% no-repeat;
   }
 
-  .about-content p {
-  text-align: left;
-}
+  .values-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    text-align: center;
+  }
+
+  .values-list li + li::before {
+    content: "+\A";
+    white-space: pre;
+    display: block;
+    padding-right: 0;
+    margin-bottom: var(--space-2);
+  }
+
+  /* ── Skills ── */
+  .skills {
+    min-height: auto;
+  }
+
+  .skill-card {
+    width: min(100%, 20rem);
+    padding: var(--space-4);
+    min-height: 25.5rem;
+    justify-content: space-between;
+  }
+
+  .skill-card p {
+    min-height: 0;
+    flex-grow: 1;
+  }
+
+  .skill-card .tag-list {
+    margin-top: auto;
+  }
+
+  /* ── Projects ── */
+  .projects {
+    min-height: auto;
+  }
+
+  .project-card {
+    width: min(100%, 20rem);
+  }
+
+  .project-art img {
+    height: 12rem;
+  }
+
   .projects::before {
     background:
       linear-gradient(
@@ -731,6 +800,20 @@ h2 {
       url("./assets/svg-curves/curvas-proyectos-mobile.svg") center / 100% 100% no-repeat;
   }
 
+  /* ── Metrics ── */
+  .metrics {
+    min-height: auto;
+  }
+
+  .metrics-grid {
+    width: min(100%, 18rem);
+  }
+
+  /* ── Experience ── */
+  .experience {
+    min-height: auto;
+  }
+
   .experience::before {
     background:
       linear-gradient(
@@ -740,6 +823,22 @@ h2 {
         rgb(38 38 38 / 50%) 100%
       ),
       url("./assets/svg-curves/curvas-formacion-mobile.svg") center / 100% 100% no-repeat;
+  }
+
+  /* ── Contact ── */
+  .contact-cta {
+    font-size: var(--font-size-xl);
+    padding: 0.3rem 1rem;
+    min-width: 11rem;
+  }
+
+  /* ── Header ── */
+  .brand-name {
+    display: none;
+  }
+
+  .brand-mark {
+    margin-left: var(--space-4);
   }
 }
 
@@ -957,7 +1056,8 @@ h2 {
 .contact-links {
   display: grid;
   gap: var(--space-2);
-  margin-top: 0;
+  margin-top: var(--space-8);
+  margin-left: var(--space-10);
   margin-bottom: var(--space-5);
   padding: 0;
   list-style: none;
@@ -1117,7 +1217,7 @@ h2 {
   }
 
   .profile-image {
-    height: 10rem;
+    height: 16rem;
   }
 
   .profile-card figcaption strong {
@@ -1334,10 +1434,10 @@ h2 {
   .about {
     min-height: 37.6875rem;
     padding-right: var(--space-4);
-    padding-left: clamp(var(--space-4), 15.2778vw, 13.75rem);
+    padding-left: clamp(var(--space-6), 14vw, 13.75rem);
     justify-content: start;
-    grid-template-columns: minmax(0, 20rem) minmax(0, 30rem);
-    gap: clamp(var(--space-6), 6.25vw, 5.625rem);
+    grid-template-columns: minmax(21.5rem, 23rem) minmax(0, 32rem);
+    gap: clamp(var(--space-6), 6vw, 5.625rem);
     row-gap: var(--space-6);
   }
 
@@ -1345,19 +1445,23 @@ h2 {
     display: flex;
     width: 100%;
     aspect-ratio: 20 / 29;
-    max-width: 20rem;
+    max-width: 23rem;
     flex-direction: column;
+    justify-content: space-between;
     align-self: start;
     padding: var(--space-3);
   }
 
   .profile-image {
+    width: 100%;
+    height: 27rem;
+    flex: none;
     min-height: 0;
-    flex: 1;
   }
 
   .profile-card figcaption {
-    padding: var(--space-3) var(--space-1) 0;
+    margin-top: auto;
+    padding: var(--space-2) var(--space-1) var(--space-1);
   }
 
   .profile-card figcaption strong {
