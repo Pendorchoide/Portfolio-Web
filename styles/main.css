@@ -131,9 +131,9 @@ h2 {
 .mobile-menu {
   position: relative;
   display: block;
-  order: 1;
+  order: 2;
   flex: 0 0 auto;
-  margin-left: auto;
+  margin-left: 0;
 }
 
 .mobile-menu summary {
@@ -188,6 +188,7 @@ h2 {
 
 .header-socials {
   display: none;
+  order: 1;
   flex: 0 0 auto;
   gap: var(--space-4);
   padding: 0 0 0 var(--space-2);
@@ -232,11 +233,42 @@ h2 {
   place-items: center;
   border-radius: 50%;
 }
+  
+.availability-location {
+    color: var(--color-text);
+}
+@media (max-width: 1023.984px) {
+  .header-socials {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-left: auto;
+    padding-left: 0;
+  }
+
+  .header-socials a {
+    display: none;
+  }
+
+  .header-socials .theme-indicator {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 0;
+    background: var(--color-text);
+  }
+}
 
 .section-shell {
   min-width: 0;
   padding: 2.25rem max(0.75rem, calc((100% - var(--content-width)) / 2));
   border-bottom: 1px solid var(--color-border);
+}
+
+@media (max-width: 767.984px) {
+  .hero,
+  .about {
+    padding-inline: clamp(1.25rem, calc(50vw - 8.75rem), 2rem);
+  }
 }
 
 .hero,
@@ -351,8 +383,24 @@ h2 {
 
 .availability span {
   padding-inline: var(--space-1);
-  color: var(--color-accent-gold);
+  color: var(--color-text);
 }
+
+@media (max-width: 767.984px) {
+  .availability{
+      margin-top: var(--space-6);
+  }
+
+  .availability-separator {
+    display: none;
+  }
+
+  .availability-location {
+    display: block;
+    padding-inline: 0 !important;
+  }
+}
+
 
 .about {
   display: flex;
@@ -383,6 +431,7 @@ h2 {
 
 .profile-card {
   width: min(100%, 8rem);
+  min-height: 464px;
   grid-area: profile;
   order: 2;
   align-self: center;
@@ -613,7 +662,49 @@ h2 {
   width: min(100%, 30rem);
 }
 
-@media (max-width: 47.999rem) {
+@media (max-width: 767.984px) {
+  .hero::before {
+    background: url("./assets/svg-curves/curvas-hero-mobile.svg") center / 100% 100% no-repeat;
+  }
+
+  .profile-card {
+    display: flex;
+    width: min(100%, 20rem);
+    aspect-ratio: 20 / 29;
+    flex-direction: column;
+    min-height: 0;
+    padding: var(--space-3);
+  }
+
+  .profile-image {
+    min-height: 0;
+    height: 0;
+    flex: 1;
+  }
+
+  .profile-card figcaption {
+    padding: var(--space-3) var(--space-1) 0;
+  }
+
+  .profile-card figcaption strong {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: var(--font-weight-medium);
+    line-height: 1.1;
+  }
+
+  .profile-card figcaption span {
+    font-size: 1.125rem;
+    line-height: 1.2;
+  }
+
+  .brand-name{
+    display:none;
+  }
+
+  .brand-mark{
+    margin-left: var(--space-4);
+  }
   .about::before {
     background:
       linear-gradient(
@@ -626,6 +717,9 @@ h2 {
       url("./assets/svg-curves/curvas-sobre-mi-mobile.svg") center / 100% 100% no-repeat;
   }
 
+  .about-content p {
+  text-align: left;
+}
   .projects::before {
     background:
       linear-gradient(
@@ -982,7 +1076,7 @@ h2 {
   margin: 0;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 768px) {
   .section-shell {
     min-height: 0;
     padding-block: var(--space-12);
@@ -1017,7 +1111,6 @@ h2 {
   }
 
   .profile-card {
-    width: 100%;
     max-width: 13rem;
     background: var(--color-text);
     color: var(--color-background-deep);
@@ -1034,6 +1127,8 @@ h2 {
   .profile-card figcaption span {
     font-size: var(--font-size-xs);
   }
+
+
 
   .about-content h2 {
     text-align: left;
@@ -1123,7 +1218,7 @@ h2 {
 
 }
 
-@media (min-width: 64rem) {
+@media (min-width: 1024px) {
   :root {
     --font-size-metric-label: 1.5rem;
     --font-size-metric-value: 8rem;
@@ -1496,7 +1591,7 @@ h2 {
   }
 }
 
-@media (min-width: 90rem) {
+@media (min-width: 1440px) {
   :root {
     --content-width: min(90rem, calc(100vw - 25rem));
   }

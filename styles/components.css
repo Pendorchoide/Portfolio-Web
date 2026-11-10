@@ -1,3 +1,9 @@
+.brand-name {
+  display: inline;
+}
+
+
+
 .button {
   position: relative;
   display: inline-flex;
@@ -72,6 +78,7 @@
   background: var(--color-surface);
   box-shadow: var(--shadow-card);
 }
+
 
 .skill-card {
   position: relative;
@@ -374,7 +381,9 @@
 }
 
 
-@media (min-width: 48rem) {
+@media (min-width: 768px) {
+  
+ 
   .skill-card {
     padding: var(--space-4);
   }
@@ -394,7 +403,7 @@
   }
 }
 
-@media (min-width: 64rem) {
+@media (min-width: 1024px) {
   .skill-card {
     padding: var(--space-4);
   }
