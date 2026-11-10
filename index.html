@@ -9,6 +9,7 @@
     >
     <title>Valentín Dutruel — Desarrollador y Diseñador</title>
     <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/theme.js" defer></script>
     <script src="scripts/education.js" defer></script>
   </head>
   <body>
@@ -40,9 +41,9 @@
         <a href="https://github.com/Pendorchoide" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
           <img src="styles/assets/svg/GitHub.svg" alt="" width="18" height="18">
         </a>
-        <span class="theme-indicator" title="Modo oscuro activo">
-          <img src="styles/assets/svg/light_mode.svg" alt="Modo oscuro activo" width="18" height="18">
-        </span>
+        <button class="theme-indicator" id="theme-toggle" type="button" aria-label="Cambiar tema de color" title="Cambiar tema">
+          <img src="styles/assets/svg/light_mode.svg" alt="" width="18" height="18">
+        </button>
       </nav>
     </header>
 
@@ -66,10 +67,10 @@
         <figure class="profile-card">
           <img
             class="profile-image"
-            src="styles/assets/gatito%20mockup.webp"
-            alt="Gatito retratado de frente"
-            width="579"
-            height="900"
+            src="styles/assets/profile-picture.webp"
+            alt="Fotografía de perfil de Valentín Dutruel"
+            width="897"
+            height="1600"
             loading="lazy"
           >
           <figcaption class="profile-card-text">

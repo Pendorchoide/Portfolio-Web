@@ -5,12 +5,15 @@
 
   /* Colores */
   --color-background: #262626;
+  --color-brand-mark: #262626;
   --color-background-deep: #191919;
   --color-hero-base: #212121;
   --color-surface: #1c1c1c;
   --color-surface-raised: #212121;
   --color-text: #f2f2f9;
   --color-text-muted: #c8c8c8;
+  --color-text-button: #262626;
+  --color-text-button-light: #1c1c1c;
   --color-border: #3f3f3f;
   --color-line-separator: #f2f2f9;
   --color-white: #ffffff;
@@ -22,7 +25,16 @@
     var(--color-accent-coral) 0%,
     var(--color-accent-gold) 52%,
     var(--color-accent-aqua) 100%
-  );
+    );
+    
+    /* Sombras y degradados de sección (oscuro) */
+    --shadow-overlay: rgb(0 0 0 / 50%);
+    --shadow-overlay-strong: rgb(0 0 0 / 55%);
+    --hero-fade-start: #000000;
+    --hero-fade-start-pos: 15%;
+    --hero-fade-transparent: rgb(0 0 0 / 0%);
+    --gran-opacity: 0.88;
+    --contact-icon-filter: brightness(0) invert(1);
 
   /* Tipografía */
   --font-heading: "Space Grotesk", sans-serif;
@@ -69,4 +81,35 @@
   --shadow-card: 0 0.25rem 1rem rgb(0 0 0 / 20%);
   --content-width: 65rem;
   --header-height: 4.5rem;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Colores modo claro */
+  --color-background: #ffffff;
+  --color-background-deep: #f0f2f5;
+  --color-hero-base: #f5f7fa;
+  --color-surface: #f4f6f8;
+  --color-surface-raised: #ffffff;
+  --color-text: #191919;
+  --color-text-muted: #555555;
+  --color-text-button: #262626;
+  --color-text-button-light: #f0f2f5;
+
+  --color-border: #d2d6dc;
+  --color-line-separator: #191919;
+  --color-white: #ffffff;
+
+  /* Degradados de sombra azul oscuro */
+  --shadow-overlay: rgb(16 28 48 / 42%);
+  --shadow-overlay-strong: rgb(16 28 48 / 48%);
+  --hero-fade-start: #0f1d30;
+  --hero-fade-start-pos: -55%;
+  --hero-fade-transparent: rgb(15 29 48 / 0%);
+  --gran-opacity: 0.05;
+  --contact-icon-filter: brightness(0);
+
+
+  --shadow-card: 0 0.25rem 1rem rgb(16 28 48 / 12%);
 }

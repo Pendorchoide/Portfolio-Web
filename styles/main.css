@@ -81,8 +81,9 @@ h2 {
   justify-content: space-between;
   gap: var(--space-2);
   padding: var(--space-2) var(--space-3);
-  border-bottom: 1px solid var(--color-border);
-  background: rgb(25 25 25 / 96%);
+  border-bottom: 1px solid #3f3f3f;
+  background: #191919;
+  color: #f2f2f9;
 }
 
 .brand {
@@ -107,7 +108,7 @@ h2 {
   place-items: center;
   border-radius: 50%;
   background: var(--color-accent-gradient);
-  color: var(--color-background-deep);
+  color: var(--color-brand-mark);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
   font-family: var(--font-body);
@@ -141,9 +142,9 @@ h2 {
   width: 2rem;
   aspect-ratio: 1;
   place-items: center;
-  border: 1px solid var(--color-border);
+  border: 1px solid #3f3f3f;
   border-radius: var(--radius-sm);
-  color: var(--color-text);
+  color: #f2f2f9;
   cursor: pointer;
   list-style: none;
 }
@@ -165,10 +166,11 @@ h2 {
   display: none;
   width: min(15rem, calc(100vw - 2rem));
   padding: var(--space-2);
-  border: var(--border-style);
+  border: 1px solid #3f3f3f;
   border-radius: var(--radius-md);
-  background: var(--color-background-deep);
-  box-shadow: var(--shadow-card);
+  background: #191919;
+  color: #f2f2f9;
+  box-shadow: 0 0.25rem 1rem rgb(0 0 0 / 40%);
 }
 
 .mobile-menu[open] .mobile-menu-nav {
@@ -183,7 +185,8 @@ h2 {
 }
 
 .mobile-menu-nav a:hover {
-  background: var(--color-surface);
+  background: #262626;
+  color: #f2f2f9;
 }
 
 .header-socials {
@@ -213,25 +216,35 @@ h2 {
 }
 
 
-.header-socials img,
-.theme-indicator img {
+.header-socials img {
   display: block;
   width: 1.6rem;
   height: 1.6rem;
   filter: brightness(0) invert(1);
 }
 
-.theme-indicator img{
-  filter: brightness(0) invert(0);
-}
-
-
 .theme-indicator {
   display: grid;
-  width: 1.6rem;
-  aspect-ratio: 1;
+  width: 2rem;
+  height: 2rem;
   place-items: center;
   border-radius: 50%;
+  border: none;
+  background: #f2f2f9;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 160ms ease;
+}
+
+.theme-indicator:hover {
+  transform: scale(1.05);
+}
+
+.theme-indicator img {
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+  filter: brightness(0) invert(0);
 }
   
 
@@ -252,7 +265,7 @@ h2 {
     width: 2rem;
     height: 2rem;
     margin-left: 0;
-    background: var(--color-text);
+    background: #f2f2f9;
   }
 }
 
@@ -317,7 +330,7 @@ h2 {
   min-height: 33.1875rem;
   align-items: flex-start;
   background-color: var(--color-hero-base);
-  background-image: linear-gradient(90deg, #000000 15%, rgb(0 0 0 / 0%) 50%, rgb(0 0 0 / 0%) 60%);
+  background-image: linear-gradient(90deg, var(--hero-fade-start) var(--hero-fade-start-pos), var(--hero-fade-transparent) 50%, var(--hero-fade-transparent) 60%);
   background-position: center;
   background-size: 100% 100%;
 }
@@ -332,7 +345,7 @@ h2 {
   inset: 0;
   background: url("./assets/granulado-general.webp") center -2.3125rem / auto 37.75rem no-repeat;
   mix-blend-mode: multiply;
-  opacity: 0.88;
+  opacity: var(--gran-opacity);
   clip-path: inset(0);
 }
 
@@ -418,10 +431,10 @@ h2 {
   background:
     linear-gradient(
       90deg,
-      rgb(0 0 0 / 55%) 0%,
+      var(--shadow-overlay-strong) 0%,
       transparent 35%,
       transparent 65%,
-      rgb(0 0 0 / 55%) 100%
+      var(--shadow-overlay-strong) 100%
     ),
     url("./assets/svg-curves/curvas-sobre-mi.svg") center center / 100% auto no-repeat;
 }
@@ -508,27 +521,28 @@ h2 {
   display: flex;
   min-height: 86.25rem;
   flex-direction: column;
-  background: var(--color-background);
-  background-image: url("./assets/granulado-general.webp");
-  background-position: center;
-  background-repeat: repeat-y;
-  background-size: auto 37.75rem;
-  background-blend-mode: multiply;
-}
-
-.skills::after {
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgb(0 0 0 / 50%) 0%,
-    transparent 50%,
-    rgb(0 0 0 / 50%) 100%
-  );
+  background-color: var(--color-background);
+  background-image: url("./assets/granulado-arcoiris-skills.webp");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
 }
 
 .skills::before {
   inset: 0;
-  background: url("./assets/granulado-arcoiris-skills.webp") center bottom / 100% auto no-repeat;
+  background: linear-gradient(
+    90deg,
+    var(--shadow-overlay) 0%,
+    transparent 50%,
+    var(--shadow-overlay) 100%
+  );
+}
+
+.skills::after {
+  inset: 0;
+  background: url("./assets/granulado-general.webp") center 0 / auto 37.75rem repeat-y;
+  mix-blend-mode: multiply;
+  opacity: var(--gran-opacity);
 }
 
 .skills-grid {
@@ -558,9 +572,9 @@ h2 {
   background:
     linear-gradient(
       180deg,
-      rgb(0 0 0 / 50%) 0%,
-      rgb(38 38 38 / 50%) 49.9162%,
-      rgb(38 38 38 / 50%) 100%
+      var(--shadow-overlay) 0%,
+      transparent 50%,
+      var(--shadow-overlay) 100%
     ),
     url("./assets/svg-curves/curvas-proyectos.svg") center center / 100% auto no-repeat;
 }
@@ -602,30 +616,28 @@ h2 {
   min-height: 28.625rem;
   flex-direction: column;
   justify-content: center;
-  background: var(--color-background);
-}
-
-.metrics::after {
-  inset: 0;
-  background: url("./assets/granulado-arcoiris-metricas.webp") center bottom / 100% auto no-repeat;
-}
-
-.metrics {
-  background-image: url("./assets/granulado-general.webp");
-  background-position: center;
-  background-repeat: repeat-y;
-  background-size: auto 37.75rem;
-  background-blend-mode: multiply;
+  background-color: var(--color-background);
+  background-image: url("./assets/granulado-arcoiris-metricas.webp");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
 }
 
 .metrics::before {
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgb(0 0 0 / 50%) 0%,
+    var(--shadow-overlay) 0%,
     transparent 50%,
-    rgb(0 0 0 / 50%) 100%
+    var(--shadow-overlay) 100%
   );
+}
+
+.metrics::after {
+  inset: 0;
+  background: url("./assets/granulado-general.webp") center 0 / auto 37.75rem repeat-y;
+  mix-blend-mode: multiply;
+  opacity: var(--gran-opacity);
 }
 
 .metrics-grid {
@@ -650,9 +662,9 @@ h2 {
   background:
     linear-gradient(
       180deg,
-      rgb(0 0 0 / 50%) 0%,
-      rgb(38 38 38 / 50%) 49.9162%,
-      rgb(38 38 38 / 50%) 100%
+      var(--shadow-overlay) 0%,
+      transparent 50%,
+      var(--shadow-overlay) 100%
     ),
     url("./assets/svg-curves/curvas-formacion.svg") center center / 100% auto no-repeat;
 }
@@ -734,10 +746,10 @@ h2 {
     background:
       linear-gradient(
         90deg,
-        rgb(0 0 0 / 55%) 0%,
+        var(--shadow-overlay-strong) 0%,
         transparent 35%,
         transparent 65%,
-        rgb(0 0 0 / 55%) 100%
+        var(--shadow-overlay-strong) 100%
       ),
       url("./assets/svg-curves/curvas-sobre-mi-mobile.svg") center / 100% 100% no-repeat;
   }
@@ -760,9 +772,6 @@ h2 {
   /* ── Skills ── */
   .skills {
     min-height: auto;
-  }
-
-  .skills::before {
     background-image: url("./assets/granulado-arcoiris-skills-mobile_Mesa de trabajo 1.webp");
   }
 
@@ -799,9 +808,9 @@ h2 {
     background:
       linear-gradient(
         180deg,
-        rgb(0 0 0 / 50%) 0%,
-        rgb(38 38 38 / 50%) 49.9162%,
-        rgb(38 38 38 / 50%) 100%
+        var(--shadow-overlay) 0%,
+        transparent 50%,
+        var(--shadow-overlay) 100%
       ),
       url("./assets/svg-curves/curvas-proyectos-mobile.svg") center / 100% 100% no-repeat;
   }
@@ -809,9 +818,6 @@ h2 {
   /* ── Metrics ── */
   .metrics {
     min-height: auto;
-  }
-
-  .metrics::after {
     background-image: url("./assets/granulado-arcoiris-metricas-mobile_Mesa de trabajo 1.webp");
   }
 
@@ -828,15 +834,15 @@ h2 {
     background:
       linear-gradient(
         180deg,
-        rgb(0 0 0 / 50%) 0%,
-        rgb(38 38 38 / 50%) 49.9162%,
-        rgb(38 38 38 / 50%) 100%
+        var(--shadow-overlay) 0%,
+        transparent 50%,
+        var(--shadow-overlay) 100%
       ),
       url("./assets/svg-curves/curvas-formacion-mobile.svg") center / 100% 100% no-repeat;
   }
 
   /* ── Contact ── */
-  .contact::after {
+  .contact {
     background-image: url("./assets/granulado-arcoiris-contactame_mobile_Mesa de trabajo 1.webp");
   }
 
@@ -1037,27 +1043,28 @@ h2 {
 
 .contact {
   min-height: 25.125rem;
-  background: var(--color-background);
-  background-image: url("./assets/granulado-general.webp");
-  background-position: center;
-  background-repeat: repeat-y;
-  background-size: auto 37.75rem;
-  background-blend-mode: multiply;
+  background-color: var(--color-background);
+  background-image: url("./assets/granulado-arcoiris-contactame_Mesa de trabajo 1.webp");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
 }
 
 .contact::before {
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgb(0 0 0 / 50%) 0%,
+    var(--shadow-overlay) 0%,
     transparent 50%,
-    rgb(0 0 0 / 50%) 100%
+    var(--shadow-overlay) 100%
   );
 }
 
 .contact::after {
   inset: 0;
-  background: url("./assets/granulado-arcoiris-contactame_Mesa de trabajo 1.webp") center bottom / 100% auto no-repeat;
+  background: url("./assets/granulado-general.webp") center 0 / auto 37.75rem repeat-y;
+  mix-blend-mode: multiply;
+  opacity: var(--gran-opacity);
 }
 
 .contact > h2,
@@ -1092,7 +1099,7 @@ h2 {
   width: 1.25rem;
   height: 1.25rem;
   flex: 0 0 auto;
-  filter: brightness(0) invert(1);
+  filter: var(--contact-icon-filter);
 }
 
 .contact-link-indicator {
@@ -1361,7 +1368,7 @@ h2 {
 
   .projects::before {
     background:
-      linear-gradient(90deg, rgb(0 0 0 / 50%) 0%, transparent 100%),
+      linear-gradient(90deg, var(--shadow-overlay) 0%, transparent 100%),
       url("./assets/svg-curves/curvas-proyectos.svg") center center / 100% auto no-repeat;
   }
 
@@ -1402,9 +1409,7 @@ h2 {
     transition: opacity 160ms ease;
   }
 
-  .site-nav a:hover {
-    color: var(--color-text);
-  }
+
 
   .site-nav a:hover::after,
   .site-nav a:focus-visible::after {
