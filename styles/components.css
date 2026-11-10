@@ -4,12 +4,13 @@
   min-height: 2.5rem;
   align-items: center;
   justify-content: center;
-  padding: 0.65rem 1.1rem;
+  padding: 0.5rem 1.1rem;
   border: 1px solid transparent;
   border-radius: var(--radius-lg);
   color: var(--color-background);
   font-size: var(--font-size-base);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-heading);
   line-height: 1.2;
   text-decoration: none;
   transition:
@@ -31,14 +32,21 @@
 
 .button-accent {
   background: var(--color-accent-gradient);
+  background-size: 110%;
+  background-position: 5% 50%;
 }
 
 .hero-actions .button::after,
 .contact-cta::after {
   position: absolute;
-  inset: 2px;
-  border: 1px solid rgb(25 25 25 / 48%);
-  border-radius: inherit;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  inset: 1px;
+  border: 1.5px solid var(--color-background-deep);
+  border-radius: var(--radius-lg);;
   content: "";
   pointer-events: none;
 }
@@ -49,7 +57,7 @@
 }
 
 .button-light {
-  border-color: var(--color-border);
+  border-color: none;
   background: var(--color-text);
 }
 
@@ -59,7 +67,7 @@
 .metrics-grid > div,
 .education-card {
   min-width: 0;
-  border: var(--border-style);
+  border: none;
   border-radius: var(--radius-md);
   background: var(--color-surface);
   box-shadow: var(--shadow-card);
@@ -70,7 +78,6 @@
   isolation: isolate;
   display: flex;
   flex-direction: column;
-  padding: var(--space-3);
 }
 
 .skill-card::before {
@@ -101,7 +108,7 @@
 
 .skill-card h3 {
   padding-bottom: var(--space-2);
-  border-bottom: var(--border-style);
+  border-bottom: var(--line-separator-style);
   text-align: center;
 }
 
@@ -115,6 +122,7 @@
 .skill-card p {
   margin: var(--space-3) 0 var(--space-4);
   font-weight: 300;
+  min-height: 9rem;
 }
 
 .skill-card p strong {
@@ -124,19 +132,20 @@
 .tag-list {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-1);
-  margin: auto 0 0;
-  padding: var(--space-3) 0 0;
-  border-top: var(--border-style);
+  gap: var(--space-2);
+  padding: var(--space-3) 0 0 ;
+  border-top: var(--line-separator-style);
   list-style: none;
 }
 
 .tag-list li {
-  padding: 0.14rem 0.4rem;
-  border: 1px solid var(--color-border);
+  padding: 0.14rem 0.8rem;
+  border: 1px solid var(--color-text);
   border-radius: var(--radius-pill);
   color: var(--color-text);
   font-size: var(--font-size-xs);
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-light);
   line-height: 1.3;
   transition:
     background 160ms ease,
@@ -151,9 +160,11 @@
 }
 
 .project-card {
+  background: var(--color-background);
   position: relative;
   isolation: isolate;
   display: flex;
+  padding: var(--space-3);
   flex-direction: column;
   overflow: hidden;
   box-shadow: none;
@@ -186,16 +197,6 @@
   position: relative;
   overflow: hidden;
   padding: var(--space-2) 0.625rem 0;
-  border-bottom: 0;
-}
-
-.project-art::after {
-  position: absolute;
-  right: 0.625rem;
-  bottom: 0;
-  left: 0.625rem;
-  border-bottom: 1px solid var(--color-text);
-  content: "";
 }
 
 .project-copy {
@@ -206,7 +207,10 @@
 .project-copy h3 {
   margin-bottom: var(--space-2);
   font-size: var(--font-size-base);
+  font-family: var(--font-body);
   line-height: 1.2;
+  padding-top: var(--space-2);
+  border-top: var(--line-separator-style);
 }
 
 .project-copy h3 span {
@@ -222,9 +226,19 @@
   line-height: 1;
 }
 
+.project-link-indicator{
+  filter: invert(1)
+}
+
+.contact-link-indicator{
+  filter: invert(0)
+}
+
 .project-copy p {
   margin: 0;
   font-size: var(--font-size-sm);
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-light);
   line-height: 1.7;
 }
 
@@ -299,8 +313,66 @@
 
 .education-card {
   position: relative;
-  padding: var(--space-3);
+  background: transparent;
+  box-shadow: none;
+  min-height: 250px;
 }
+
+
+
+.education-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  min-width: inherit;
+  min-height: inherit;
+
+  inset: 4px;
+  top: var(--space-3);
+  right: var(--space-3);
+
+  border: 1px solid transparent; 
+  border-radius:var(--radius-lg);
+
+  background-image: 
+    linear-gradient(var(--color-surface, #121212), var(--color-surface, #121212)), 
+    var(--color-accent-gradient);
+  
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+
+.education-card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  min-width: inherit;
+  min-height: inherit;
+
+  inset: 4px;
+  bottom: var(--space-3);
+  left: var(--space-3);
+
+  border: 1px solid transparent; 
+  border-radius:var(--radius-lg);
+
+  background-image: 
+    linear-gradient(var(--color-surface, #121212), var(--color-surface, #121212)), 
+    var(--color-accent-gradient);
+  
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+.contact-links li a img{
+  width: var(--space-8);
+  height: var(--space-8);
+  margin-right: var(--space-2);
+}
+
 
 @media (min-width: 48rem) {
   .skill-card {

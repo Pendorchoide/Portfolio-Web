@@ -1,11 +1,16 @@
 const educationCard = document.querySelector(".education-card");
 const courseList = document.querySelector("#education-courses");
 const educationYear = document.querySelector(".education-year");
-const yearButtons = Array.from(document.querySelectorAll(".timeline button[data-year]"));
+const timeline = document.querySelector(".timeline");
+const yearButtons = timeline
+  ? Array.from(timeline.querySelectorAll("button[data-year]"))
+  : [];
 
-if (!educationCard || !courseList || !educationYear || yearButtons.length !== 3) {
+if (!educationCard || !courseList || !educationYear || !timeline || yearButtons.length !== 3) {
   throw new Error("No se pudo inicializar la sección de Formación.");
 }
+
+timeline.dataset.activeYear = "2024";
 
 const coursesByYear = {
   "2024": [
@@ -37,6 +42,8 @@ yearButtons.forEach((button) => {
     }
 
     currentYear = selectedYear;
+    timeline.dataset.activeYear = selectedYear;
+    educationCard.classList.remove("is-entering");
     yearButtons.forEach((yearButton) => {
       const isActive = yearButton === button;
       yearButton.classList.toggle("is-active", isActive);
@@ -55,6 +62,7 @@ yearButtons.forEach((button) => {
       courseList.replaceChildren(...items);
       educationYear.textContent = selectedYear;
       educationCard.classList.remove("is-transitioning");
+      educationCard.classList.add("is-entering");
     }, transitionDuration);
   });
 });
